@@ -10,19 +10,19 @@ import UIKit
 
 class BViewController: UIViewController {
     
-@IBOutlet weak var lbMeg: UITextField!
+@IBOutlet weak var lbMMeg: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func btnTestClicked(_ sender: UIButton) {
+    @IBAction func btnBClicked(_ sender: UIButton) {
         
         print("我按了啥？")
         
-        lbMeg.text = "我要牛奶糖"
-        lbMeg.textColor = UIColor.red
+        lbMMeg.text = "我要牛奶糖"
+        lbMMeg.textColor = UIColor.red
     }
 
     /*
