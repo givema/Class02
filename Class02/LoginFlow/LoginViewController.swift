@@ -16,6 +16,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
         // Do any additional setup after loading the view.
     }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesBegan")
+        self.view.endEditing(true)
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -36,7 +40,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
         //条件成立
         let substringToReplace = 已有的文字[rangeOfTextToReplace]
         let count = 已有的文字.count - substringToReplace.count + string.count
-        return count <= 10
+        print("tag:\(textField.tag)")
+        
+        if textField.tag == 1{
+            return count <= 5
+            
+        }
+        else if textField.tag == 2{
+            return count <= 7
+        }
+        
+        
+        return false
     //条件成立
     
     }
@@ -50,4 +65,5 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
     }
     */
 
+}
 }

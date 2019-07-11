@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MsM-4O-jJL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n0h-2p-8iG">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -151,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="698.55072463768124" y="-66.294642857142861"/>
         </scene>
-        <!--View Controller-->
+        <!--Master View Controller-->
         <scene sceneID="f3S-mX-s9o">
             <objects>
-                <viewController id="WNX-gX-JhV" sceneMemberID="viewController">
+                <viewController id="WNX-gX-JhV" customClass="MasterViewController" customModule="Class02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AUy-b4-UKS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="2285.507246376812" y="-66.294642857142861"/>
         </scene>
-        <!--View Controller-->
+        <!--My Web View Controller-->
         <scene sceneID="bi5-Ck-arm">
             <objects>
-                <viewController id="QQF-zd-NDb" sceneMemberID="viewController">
+                <viewController id="QQF-zd-NDb" customClass="MyWebViewController" customModule="Class02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ui6-n4-1RE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,20 +240,25 @@
             </objects>
             <point key="canvasLocation" x="3256.521739130435" y="409.15178571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--My Map View Controller-->
         <scene sceneID="urc-Lf-A7l">
             <objects>
-                <viewController id="n0h-2p-8iG" sceneMemberID="viewController">
+                <viewController id="n0h-2p-8iG" customClass="MyMapViewController" customModule="Class02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GnL-1T-pSY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hDS-IJ-buk">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hDS-IJ-buk">
+                                <rect key="frame" x="0.0" y="57" width="414" height="805"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hDS-IJ-buk" firstAttribute="bottom" secondItem="23D-tS-ZtR" secondAttribute="bottom" id="DMC-Pn-UAS"/>
+                            <constraint firstItem="hDS-IJ-buk" firstAttribute="top" secondItem="23D-tS-ZtR" secondAttribute="top" constant="13" id="MGW-KA-HbH"/>
+                            <constraint firstItem="hDS-IJ-buk" firstAttribute="leading" secondItem="23D-tS-ZtR" secondAttribute="leading" id="drn-5O-Ciz"/>
+                            <constraint firstItem="hDS-IJ-buk" firstAttribute="trailing" secondItem="23D-tS-ZtR" secondAttribute="trailing" id="v8M-2U-9C9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="23D-tS-ZtR"/>
                     </view>
                 </viewController>
