@@ -2,55 +2,37 @@
 //  ViewController.swift
 //  Class02
 //
-//  Created by njcit-11 on 2019/7/6.
-//  Copyright © 2019 njcit. All rights reserved.
+//  Created by iMAC on 2019/7/10.
+//  Copyright © 2019 iMACbrave. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-
-    
-    @IBOutlet weak var lbMeg: UILabel!
-    var result = 10.2
-    
-    
-    @IBAction func btnTestClicked(_ sender: UIButton) {
-        
-        print("我按了啥？")
-        
-        lbMeg.text = "我要铜锣烧"
-        lbMeg.textColor = UIColor.red 
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //我去超市买🍉
-        let iGoToSupermarket = true
+        let worker:AsyncRequestWorker = AsyncRequestWorker()
         
-        //有🍊
-        let iSeeOrange = true
+        worker.getResponse(from: "https://google.com", tag: 1)
         
-        if iGoToSupermarket {
-            
-            var 🍉 = 1
-            
-            if iSeeOrange{
-                🍉 = 10
-            }
-            
-            print("我要买：\(🍉)个🍉")
-    
-            
-        }
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(notification:)) , name: NSNotification.Name(rawValue: "response.received"), object: nil)
+        
+       // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification , object:nil)
+        
         
     }
-    
-    func add(a:Int,b:Int) -> Int {
-        return a + b
+    // .tencent.com
+    @objc func keyboardWillShow(notification: NSNotification) {
+        let hope = notification.userInfo!["response"]
+        print(hope)
+//        let keyboardHeight = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
+//        print("猜猜看:\(keyboardHeight)")
+//        btnHiBottomConstraint.constant = keyboardHeight
     }
+    
     
 }
 
